@@ -1,0 +1,255 @@
+@font-face {
+    font-family: Outfit;
+    src: url(assets/fonts/outfit/Outfit-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: Young-Serif;
+    src: url(assets/fonts/young-serif/YoungSerif-Regular.ttf);
+}
+
+:root {
+    --White: hsl(0, 0%, 100%);
+    --Stone100: hsl(30, 54%, 90%);
+    --Stone150: hsl(30, 18%, 87%);
+    --Stone600: hsl(30, 10%, 34%);
+    --Stone900: hsl(24, 5%, 18%);
+    --Brown800: hsl(14, 45%, 36%);
+    --Rose800: hsl(332, 51%, 32%);
+    --Rose50: hsl(330, 100%, 98%);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+    font-family: Outfit;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+main {
+    background-color: var(--Stone100);
+    height: 1930.5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.recipe {
+    background-color: var(--White);
+    width: 735px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 40px;
+
+    border-radius: 25px;
+}
+
+.recipe-header img {
+    width: 100%;
+    border-radius: 10px;
+
+    object-fit: cover;
+}
+
+.recipe-header h1 {
+    font-family: Young-Serif;
+    font-size: 40px;
+
+    margin-top: 32px;
+}
+
+.recipe-header p {
+    color: var(--Stone600);
+    line-height: 24px;
+    margin-top: 16px;
+}
+
+.recipe strong {
+    font-weight: 700;
+    color: var(--Stone900);
+}
+
+.preparation-time-section {
+    background-color: var(--Rose50);
+    border-radius: 5px;
+
+    width: 100%;
+    padding: 25px 0 30px 28px;
+    margin-top: 32px;
+}
+
+.preparation-time-section h2 {
+    font-family: Outfit;
+    font-size: 20px;
+    font-weight: 600;
+
+    color: var(--Rose800);
+}
+
+.recipe ul {
+    margin-left: 8px;
+    list-style-type: none;
+
+    & li {
+        position: relative;
+        margin: 12px 0 0 0;
+        padding-left: 24px;
+    }
+
+    & li::before {
+        content: '';
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        position: absolute;
+        top: calc((100% - 4px) / 2);
+        left: 0px;
+    }
+}
+
+.preparation-time-section ul {
+    margin-top: 13px;
+
+    & li::before {
+        background-color: var(--Rose800);
+    }
+}
+
+.recipe-section h2 {
+    font-familY: Young-Serif;
+    font-size: 28px;
+
+    color: var(--Brown800);
+}
+
+.ingredients-section {
+    margin-top: 14px;
+    margin-bottom: 34px;
+}
+
+.ingredients-section ul {
+    margin-top: 20px;
+
+    & li {
+        color: var(--Stone600);
+    }
+
+    & li::before {
+        background-color: var(--Brown800);
+    }
+}
+
+hr {
+    width: 100%;
+    height: 1px;
+    background-color: var(--Stone150);
+}
+
+.instructions-section {
+    margin-top: 27px;
+    margin-bottom: 31px;
+}
+
+.instructions-section ol {
+    margin-top: 19px;
+    margin-left: 8px;
+    list-style-type: none;
+    counter-reset: numeration 0;
+
+    & li {
+        position: relative;
+        margin: 8px 0 0 0px;
+        padding-left: 34px;
+    }
+
+    & li::before {
+        counter-increment: numeration;
+        content: counter(numeration) ".";
+        color: var(--Brown800);
+        font-weight: 700;
+        position: absolute;
+        left: 0px;
+    }
+}
+
+.nutrition-section {
+    margin-top: 26px;
+    width: 100%;
+}
+
+.nutrition-section p {
+    margin-top: 20px;
+    color: var(--Stone600);
+}
+
+.nutrition-section table {
+    margin-top: 28px;
+    width: 100%;
+
+    & td:first-child {
+        padding-left: 32px;
+        color: var(--Stone600);
+    }
+
+    & td:nth-child(2) {
+        font-weight: 700;
+        color: var(--Brown800);
+    }
+
+    & td {
+        border-bottom: 1px solid var(--Stone600);
+        padding-bottom: 14px;
+        padding-top: 14px;
+    }
+
+    & tr:first-of-type td {
+        padding-top: 0px;
+    }
+
+    & tr:last-of-type td {
+        border-bottom: 0px;
+    }
+}
+
+@media (max-width: 780px) {
+    main {
+        height: auto;
+    }
+
+    .recipe {
+        width: 100vw;
+        padding: 0 0 40px 0;
+
+        border-radius: 0px;
+    }
+
+    .recipe > * {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+    .recipe-header {
+        margin: 0px;
+    }
+
+    .recipe-header > * {
+        margin: 0 40px;
+    }
+
+    .recipe-header img {
+        border-radius: 0px;
+        margin: 0px;
+    }
+
+    .preparation-time-section, .recipe-section, hr {
+        width: calc(100% - 80px);
+    }
+}
