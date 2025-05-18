@@ -17,7 +17,6 @@
     --Brown800: hsl(14, 45%, 36%);
     --Rose800: hsl(332, 51%, 32%);
     --Rose50: hsl(330, 100%, 98%);
-    --Black: hsl(0, 0%, 0%);
 }
 
 * {
@@ -69,7 +68,7 @@ main {
     font-weight: 400;
 
     margin-top: 32px;
-    color: var(--Black);
+    color: var(--Stone900);
 }
 
 .recipe-header p {
