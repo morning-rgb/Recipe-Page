@@ -17,6 +17,7 @@
     --Brown800: hsl(14, 45%, 36%);
     --Rose800: hsl(332, 51%, 32%);
     --Rose50: hsl(330, 100%, 98%);
+    --Black: hsl(0, 0%, 0%);
 }
 
 * {
@@ -27,6 +28,8 @@
     font-family: Outfit;
     font-size: 16px;
     font-weight: 400;
+    line-height: 24px;
+    color: var(--Stone600);
 }
 
 main {
@@ -62,13 +65,13 @@ main {
 .recipe-header h1 {
     font-family: Young-Serif;
     font-size: 40px;
+    font-weight: 400;
 
     margin-top: 32px;
+    color: var(--Black);
 }
 
 .recipe-header p {
-    color: var(--Stone600);
-    line-height: 24px;
     margin-top: 16px;
 }
 
@@ -125,6 +128,7 @@ main {
 
 .recipe-section h2 {
     font-familY: Young-Serif;
+    font-weight: 400;
     font-size: 28px;
 
     color: var(--Brown800);
@@ -137,10 +141,6 @@ main {
 
 .ingredients-section ul {
     margin-top: 20px;
-
-    & li {
-        color: var(--Stone600);
-    }
 
     & li::before {
         background-color: var(--Brown800);
@@ -187,7 +187,6 @@ hr {
 
 .nutrition-section p {
     margin-top: 20px;
-    color: var(--Stone600);
 }
 
 .nutrition-section table {
@@ -196,7 +195,6 @@ hr {
 
     & td:first-child {
         padding-left: 32px;
-        color: var(--Stone600);
     }
 
     & td:nth-child(2) {
